@@ -83,8 +83,8 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
         Customer customer = main.addNewCustomer();
-        //  main.customerReturnFilm();
-        // main.customerBoughtInventory(customer);
+        main.customerReturnFilm();
+        main.customerBoughtInventory(customer);
         main.newFilmAvailable();
 
     }
@@ -100,7 +100,7 @@ public class Main {
             Film film = new Film();
             film.setActors(new HashSet<>(actors));
             film.setCategories(new HashSet<>(categories));
-            film.setTitle("Hunger Games 2");
+            film.setTitle("Hunger Games 3");
             film.setLanguage(language);
             film.setRentalDuration((byte) 12);
             film.setRentalRate(BigDecimal.valueOf(14));
@@ -108,7 +108,7 @@ public class Main {
             film.setYear(Year.now());
             film.setSpecialFeature(Set.of(Feature.TRAILERS, Feature.COMMENTARIES));
             film.setRating(Rating.NC17);
-
+            filmDAO.save(film);
 
             session.getTransaction().commit();
         }
