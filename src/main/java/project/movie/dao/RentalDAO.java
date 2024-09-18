@@ -14,6 +14,4 @@ public class RentalDAO extends GenericDAO<Rental> {
         query.setMaxResults(1);
         return query.getSingleResult();
     }
-
-
 }
